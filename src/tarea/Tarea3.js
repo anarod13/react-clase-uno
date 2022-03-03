@@ -14,10 +14,10 @@ export function UncontrolledCheckbox(props) {
     return(
         <label htmlFor={props.nombre}>
             <input type='checkbox'
-            key = {props.key}
+
             onChange={e=>{setValue(e.target.checked)}}
-            checked={value}
-            value={value}/>
+            checked={props.initialValue}
+/>
         {props.nombre}</label>
     )
 }
@@ -39,12 +39,14 @@ export function CheckboxList(props) {
     
 const items = props.items;
 return(
-    <li>
+    <ul>
            {Object.entries(items).map(([key, value], i) =>
-                <UncontrolledCheckbox
-                    key = {i}
+            <li key = {i}>
+            <UncontrolledCheckbox
                     nombre={key}
                     initialValue={value}
-                />)}
-</li>)
+                /></li>)
+}
+                </ul>)
+
 }

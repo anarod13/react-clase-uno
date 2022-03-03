@@ -2,6 +2,7 @@
 import { Tarjeta, BlogPost } from "./tarea/Tarea1.js";
 import { MatchNombre, PasswordInput, ValidationInput } from "./tarea/Tarea2.js";
 import { CheckboxList, UncontrolledCheckbox } from "./tarea/Tarea3.js";
+import { CheckboxListWithState, ControlledCheckbox } from "./tarea/Tarea4.js";
 
 const reactApp = document.getElementById('react-app')
 
@@ -57,7 +58,10 @@ validation = {(value) => value.length >=8 }
 
 
 ReactDOM.render(<React.Fragment>
-
+<UncontrolledCheckbox 
+nombre='Checkbox 1'
+initialValue={true}
+/>
 <CheckboxList
 items={{
 uno: false,
@@ -66,34 +70,13 @@ tres:false
 }}/>
 </React.Fragment>,reactApp)
 
-// import { Welcome } from './components/Welcome.js';
-// 
-// ReactDOM.render(<Welcome nombre="Julián" />, document.getElementById('react-app'));
-// 
-// import { Button } from './components/Button.js';
 
-// ReactDOM.render(
-//   <Button onClick={event => alert(event.target.value)}>Hacé click!</Button>,
-//   document.getElementById('react-app')
-// );
+// Tarea 4
 
-// import { Page } from './components/Page.js';
-
-// ReactDOM.render(
-//   <Page
-//     titulo="Mi diario"
-//     articulos={[
-//       { titulo: 'Dia uno', cuerpo: 'Hoy vi una ardilla.' },
-//       { titulo: 'Dia dos', cuerpo: 'Hoy vi otra ardilla, pero capaz sea la misma.' },
-//     ]}
-//   />,
-//   document.getElementById('react-app')
-// );
-
-// import { LikeButton } from './components/LikeButton.js';
-
-// ReactDOM.render(<LikeButton />, document.getElementById('react-app'));
-
-// import { ToDoList } from './components/ToDoList.js';
-
-// ReactDOM.render(<ToDoList />, document.getElementById('react-app'));
+ReactDOM.render(<CheckboxListWithState
+items={{
+  uno:false,
+  dos:true,
+  tres:false
+}}
+/>, reactApp)
